@@ -1,0 +1,8 @@
+---
+applications:
+- name: go-vault-cf-demo
+  memory: 512M
+  instances: 1
+  buildpack: go_buildpack
+  env:
+    GO_INSTALL_PACKAGE_SPEC: github.com/alekssaul/go-vault-cf

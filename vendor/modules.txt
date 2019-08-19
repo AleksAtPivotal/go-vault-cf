@@ -1,0 +1,10 @@
+# github.com/cloudfoundry-community/go-cfenv v1.18.0
+github.com/cloudfoundry-community/go-cfenv
+# github.com/hashicorp/go-cleanhttp v0.5.0
+github.com/hashicorp/go-cleanhttp
+# github.com/mch1307/vaultlib v0.5.0
+github.com/mch1307/vaultlib
+# github.com/mitchellh/mapstructure v1.1.2
+github.com/mitchellh/mapstructure
+# github.com/pkg/errors v0.8.1
+github.com/pkg/errors
