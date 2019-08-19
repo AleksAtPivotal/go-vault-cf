@@ -19,12 +19,12 @@ func handle(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Services:", appEnv.Services)
 	fmt.Fprintf(w, "vcap_services is %s\n", os.Getenv("VCAP_SERVICES"))
 	//vcConf := vault.NewConfig()
-	_ := vault.NewConfig()
+	_ = vault.NewConfig()
 	cfvault, err := appEnv.Services.WithName("hashicorp-vault")
 	if err != nil {
-		fmt.Println("Error getting Vault Service from VCAP : %s", err)
+		fmt.Printf("Error getting Vault Service from VCAP : %s\n", err)
 	}
-	fmt.Println("cfvault.Credentials : %s", cfvault.Credentials)
+	fmt.Printf("cfvault.Credentials : %s\n", cfvault.Credentials)
 	//vcConf.Address = cfvault.Credentials
 
 }
