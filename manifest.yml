@@ -6,3 +6,4 @@ applications:
   buildpack: go_buildpack
   env:
     GO_INSTALL_PACKAGE_SPEC: github.com/alekssaul/go-vault-cf
+    #VAULT_SEARCH_PATH: "my_kv/my_org/my_secret"
