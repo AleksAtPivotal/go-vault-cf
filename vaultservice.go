@@ -3,28 +3,20 @@ package main
 type VaultService struct {
 	label       string
 	name        string
-	credentials Credentials
-}
-
-type Credentials struct {
-	address         string
-	auth            Auth
-	backends        Backends
-	backends_shared Backends_Shared
-}
-
-type Auth struct {
-	token string
-}
-
-type Backends struct {
-	generic string
-	transit string
-}
-
-type Backends_Shared struct {
-	organization string
-	space        string
+	credentials struct {
+		address string
+		auth    struct {
+			token string
+		}
+		backends struct {
+			generic string
+			transit string
+		}
+		backends_shared struct {
+			organization string
+			space        string
+		}
+	}
 }
 
 func (v VaultService) getTokenfromCF(data interface{}) VaultService {
