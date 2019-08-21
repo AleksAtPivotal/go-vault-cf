@@ -64,7 +64,7 @@ func handle(w http.ResponseWriter, r *http.Request) {
 
 	vaultCli, err := vault.NewClient(vcConf)
 	if err != nil {
-		log.Fatal(err)
+		log.Printf("Error connecting to Vault: %s", err)
 	}
 
 	var secretPath string
@@ -74,9 +74,9 @@ func handle(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Get the Vault secret data
-	secret, err := vaultCli.GetSecret(secretPath)
+	secret, err := vaultCli.GetSecret("secret/" + secretPath)
 	if err != nil {
-		log.Println(err)
+		log.Printf("Error reading the secret %s : %s", secretPath, err)
 	}
 
 	for k, v := range secret.KV {
